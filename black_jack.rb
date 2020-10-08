@@ -20,6 +20,8 @@ if sum > 21 && card1 == 11
 elsif sum > 21 && card2==11
   card2 = 1
   p card1 + card2
+elsif sum > 21
+  p 0
 else
   p card1 + card2
 end
