@@ -29,16 +29,20 @@ class Phrase
   
   def abbreviate
     
-    sanitized = self.body.gsub(/[^a-z0-9\s]/i, "")
-    text = sanitized.split()
+    # sanitized = self.body.gsub(/[^a-z0-9\s]/i, "")
+    # text = sanitized.split()
+
+    text = self.body.gsub('-',' ').split
+    
+
     tla = String.new
 
-    text.each do |word|
-      tla.concat(word[0])
-    end
+    # text.each do |word|
+    #   tla.concat(word[0])
+    # end
     
-    return tla.upcase
-    # return text #test
+    # return tla.upcase
+    return text #test
   end
 
 end
@@ -49,4 +53,8 @@ p a.abbreviate # => "PNG"
 
 a = Phrase.new
 a.body = "Complementary metal-oxide semiconductor"
+p a.abbreviate # => "PNG"
+
+a = Phrase.new
+a.body = "Complementary, metal-oxide semiconductor"
 p a.abbreviate # => "PNG"
