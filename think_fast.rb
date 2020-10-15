@@ -33,3 +33,49 @@ p some_random_input
 
 # Write your code below
 
+# p some_random_input.class
+
+# a String: downcase it and print it
+if some_random_input.is_a? String
+  p some_random_input.downcase
+end
+
+# a Time: figure out the day of the week, downcased, and print
+if some_random_input.is_a? Time
+  p some_random_input.strftime("%A").downcase
+end
+
+# an Integer: figure out whether it's odd or even and print
+if some_random_input.is_a? Integer
+  if some_random_input.even?
+    p some_random_input.to_s + ' is even'
+  else
+    p some_random_input.to_s + ' is odd'
+  end
+end
+
+# a Symbol: downcase it and print it
+if some_random_input.is_a? Symbol
+  p some_random_input.downcase
+end
+
+# nil: print "no object provided"
+if some_random_input.nil?
+  p 'no object provided'
+end
+
+# true: print "you may pass"
+if some_random_input.class==TrueClass
+  p 'you may pass'
+end
+
+# false: print "you may not pass"
+if some_random_input.class==FalseClass
+  p 'you may not pass'
+end
+
+# a Hash: print the list of keys within the Hash, as an Array.
+if some_random_input.is_a? Hash
+  p some_random_input.keys
+end
+

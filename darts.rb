@@ -29,3 +29,21 @@
 #     (x-j)^2 + (y-k)^2 = r^2
 
 p "Enter X,Y coordinates in the format 'X,Y'"
+
+coordinates = gets.chomp.split(',')
+
+x = coordinates[0].to_f
+y = coordinates[1].to_f
+
+radius = Math.sqrt(x**2 + y**2)
+p radius
+
+if radius <= 1
+  p '10 points'
+elsif radius <= 5
+  p '5 points'
+elsif radius <= 10
+  p '1 points'
+else
+  p '0 points'
+end

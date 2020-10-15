@@ -31,10 +31,50 @@
 
 # Example
 
-#   g_dna = Dna.new
-#   g_dna.strand = "G"
-#   t_dna = Dna.new
-#   t_dna.strand = "T"
+class Dna
 
-#   p g_dna.distance_between(t_dna) # => 1
+  attr_accessor :strand
 
+  def distance_between(input)
+    my_strand = self.strand.to_s.split('')
+    new_strand = input.strand.to_s.split('')
+    
+    mutations = 0
+
+    for i in 0..(my_strand.length.to_i - 1)
+      if my_strand.at(i) != new_strand.at(i)
+        mutations = mutations +1
+      end 
+    end
+
+    return mutations
+
+  end
+
+end
+
+# g_dna = Dna.new
+# g_dna.strand = "GGACGGATTCTG"
+# t_dna = Dna.new
+# t_dna.strand = "AGGACGGATTCT"
+
+# p g_dna.distance_between(t_dna) # => 1
+# my_strand = 'GGACGGATTCTG'
+# new_strand = 'AGGACGGATTCT'
+
+
+# my_strand = my_strand.to_s.split('')
+# new_strand = new_strand.to_s.split('')
+
+# p my_strand
+# p new_strand
+
+# mutations = 0
+
+# for i in 0..(my_strand.length.to_i - 1)
+#   if my_strand.at(i) != new_strand.at(i)
+#     mutations = mutations +1
+#   end 
+# end
+
+# p mutations

@@ -20,3 +20,45 @@
 #   String.isogram?("eleven") # => false
 #   String.isogram?("subdermatoglyphic") # => true
 
+# word = gets.chomp
+
+# word = word.gsub(' ','')
+# word = word.gsub('-','')
+# word = word.split('')
+
+# switch = 0
+# word.each do |letter|
+#   if word.count(letter) > 1
+#     switch = false
+#     break
+#   else
+#     switch = true
+#   end
+# end
+
+# return switch
+
+class String
+
+  def String.isogram?(text)
+    
+    word = text.downcase.gsub(' ','')
+    word = word.gsub('-','')
+    word = word.split('')
+
+    switch = true
+
+    word.each do |letter|
+      if word.count(letter) > 1
+        switch = false
+        break
+      else
+        switch = true
+      end
+    end
+
+    return switch
+
+  end
+
+end

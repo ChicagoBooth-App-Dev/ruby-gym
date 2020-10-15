@@ -6,4 +6,26 @@
 
 p "Enter two words separated by a comma"
 
-user_words = gets.chomp
+user_words = gets.chomp.split(',')
+
+p word1 = user_words[0].downcase.split('')
+p word2 = user_words[1].downcase.split('')
+
+switch = false
+# p word1.split('')
+
+word1.each do |letter|
+  if word1.count(letter)==word2.count(letter)
+    switch = true
+  else
+    switch = false
+    break
+  end
+end
+
+p switch
+
+  # list.each do |num|
+  # if num.to_i.odd? == true
+  #   sum = sum + num.to_i
+  # end

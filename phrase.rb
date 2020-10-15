@@ -15,13 +15,38 @@
 
 # Examples
 
-#   a = Phrase.new
-#   a.body = "Portable Network Graphics"
-#   a.abbreviate # => "PNG"
+# a = Phrase.new
+# a.body = "Portable Network Graphics"
+# a.abbreviate # => "PNG"
 
 #   b = Phrase.new
 #   b.body = "Complementary metal-oxide semiconductor"
 #   b.abbreviate # => "CMOS"
 
+class Phrase
+  
+  attr_accessor :body
+  
+  def abbreviate
+    
+    sanitized = self.body.gsub(/[^a-z0-9\s]/i, "")
+    text = sanitized.split()
+    tla = String.new
 
+    text.each do |word|
+      tla.concat(word[0])
+    end
+    
+    return tla.upcase
+    # return text #test
+  end
 
+end
+
+a = Phrase.new
+a.body = "Something - I made up from thin air"
+p a.abbreviate # => "PNG"
+
+a = Phrase.new
+a.body = "Complementary metal-oxide semiconductor"
+p a.abbreviate # => "PNG"
